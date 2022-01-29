@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "title": "Cars",
+        "author": "Wojciech Kowalski"
+    },
+    {
+        "id": 2,
+        "title": "Planes",
+        "author": "Michal Nowak"
+    }
+]
