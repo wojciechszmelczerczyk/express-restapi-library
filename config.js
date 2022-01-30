@@ -1,3 +1,3 @@
 module.exports = {
-  dbPath: "/db/books.json",
+  dbPath: `/db/books.json`,
 };
