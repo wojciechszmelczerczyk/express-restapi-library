@@ -44,11 +44,11 @@ Database is an arbitrary json file.
 
 ## Endpoints:
 
-### `Get all books`
+### Get all books
 
 Return all books from library as a response.
 
-- /books
+- `/books`
 
 ```javascript
 const getBooks = (req, res) => {
@@ -57,11 +57,11 @@ const getBooks = (req, res) => {
 };
 ```
 
-### `Get book with specific id`
+### Get book with specific id
 
 Return book with specific id as a response.
 
-- /books/:id
+- `/books/:id`
 
 ```javascript
 const id = parseInt(req.params.id);
@@ -79,11 +79,11 @@ fs.readFile(`${process.cwd()}${dbPath}`, "utf-8", (err, data) => {
 });
 ```
 
-### `Create book`
+### Create book
 
 Create book, return new book.
 
-- /books/create
+- `/books/create`
 
 ```javascript
 book = req.body;
@@ -109,11 +109,11 @@ fs.readFile(`${process.cwd()}${dbPath}`, "utf-8", (err, data) => {
 });
 ```
 
-### `Delete book`
+### Delete book
 
 Return book list without deleted book.
 
-- /books/:id
+- `/books/:id`
 
 ```javascript
 const id = parseInt(req.params.id);
@@ -139,11 +139,11 @@ fs.readFile(`${process.cwd()}${dbPath}`, "utf-8", (err, data) => {
 });
 ```
 
-### `Update book`
+### Update book
 
 Update book by id.
 
-- /books/:id
+- `/books/:id`
 
 ```javascript
 const id = parseInt(req.params.id);
