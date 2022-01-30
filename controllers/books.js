@@ -48,7 +48,34 @@ const createBook = (req, res) => {
   });
 };
 
-const updateBook = (req, res) => {};
+const updateBook = (req, res) => {
+  // catch id
+  const id = parseInt(req.params.id);
+
+  const bookData = req.body;
+
+  fs.readFile(`${process.cwd()}${dbPath}`, "utf-8", (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      let obj = JSON.parse(data); //now converting it to an object
+
+      objFiltered = obj.filter((book) => book["id"] !== id); // return books without one with id passed as a param
+
+      objFiltered.push(bookData); // push new book to books list
+
+      let json = JSON.stringify(objFiltered, null, 2); //converting it back to json
+
+      fs.writeFile(`${process.cwd()}${dbPath}`, json, "utf8", (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send("Book updated!");
+        }
+      });
+    }
+  });
+};
 
 const deleteBook = (req, res) => {
   const id = parseInt(req.params.id);
